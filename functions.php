@@ -141,3 +141,48 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function loadScriptSite(){
+    /*
+     * get_template_directory_uri()
+     * Получает URL текущей темы. Учитывает SSL. Не учитывает наличие дочерней темы. Не содержит закрывающий слэш.
+     * https://wp-kama.ru/function/get_template_directory_uri
+     */
+    $version = null;
+    wp_register_style(
+        'ExcitingTravelling-bootstrap', //$handle
+        get_template_directory_uri().'/bootstrap/css/bootstrap.css', // $src
+        array(), //$deps,
+        $version // $ver
+    );
+   wp_register_style(
+        'ExcitingTravelling-main', //$handle
+        get_template_directory_uri().'/main.css', // $src
+        array(), //$deps,
+        $version // $ver
+    );
+    wp_enqueue_style('ExcitingTravelling-bootstrap');
+    wp_enqueue_style('ExcitingTravelling-main');
+
+    wp_register_script(
+        'ExcitingTravelling', //$handle
+        get_template_directory_uri().'/bootstrap/js/bootstrap.js', //$src
+        array(
+            'jquery'
+        ), //$deps
+        $version, //$ver
+        true //$$in_footer
+    );
+    wp_register_script(
+        'ExcitingTravelling-social', //$handle
+        get_template_directory_uri().'/js/social.js', //$src
+        array(
+            'jquery'
+        ), //$deps
+        $version, //$ver
+        true //$$in_footer
+    );
+    wp_enqueue_script('ExcitingTravelling');
+    wp_enqueue_script('ExcitingTravelling-social');
+}
+add_action( 'wp_enqueue_scripts', 'loadScriptSite');
