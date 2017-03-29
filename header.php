@@ -8,7 +8,6 @@
  *
  * @package exciting-travelling
  */
-
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -16,13 +15,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?c2sn1i">
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'exciting-travelling' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<nav class="navbar navbar-default menu">
@@ -40,24 +39,38 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
-		        <li class="active-link"><a href="#">home</a></li>
-		        <li><a href="#">blog</a></li>
-		        <li><a href="#">contact</a></li>
-		      </ul>
+		    <?php 
+				wp_nav_menu( array( 
+				'theme_location' => '', 
+				'menu' => 'navbar navbar-default', 
+				'container' => 'div', 
+				'container_class' => 'collapse navbar-collapse', 
+				'container_id' => 'main-menu', 
+				'menu_class' => 'nav navbar-nav navbar-right', 
+				'menu_id' => '', 
+				'echo' => true, 
+				'fallback_cb' => 'wp_page_menu', 
+				'before' => '', 
+				'after' => '', 
+				'link_before' => '', 
+				'link_after' => '', 
+				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 
+				'depth' => 0, 
+				'walker' => '', 
+				) ); 
+			?>
 		 
 		      <ul class="nav navbar-nav navbar-right social">
-		        <li><a href="#"><img src="<?php echo get_template_directory_uri()?>/img/google_plus.png"></a></li>
-		        <li><a href="#"><img src="<?php echo get_template_directory_uri()?>/img/facebook.png"></a></li>
-		        <li><a href="#"><img src="<?php echo get_template_directory_uri()?>/img/twitter.png"></a></li>
+		        <li><a href="https://plus.google.com" class="socicon-googleplus"></a></li>
+		        <li><a href="https://vk.com/kate.datsenko" class="socicon-vkontakte"></a></li>
+		        <li><a href="#" class="socicon-telegram"></a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 			<span class="glyphicon glyphicon-globe globe"></span>
 		  </div><!-- /.container -->
 		</nav>
 
-
-		<!--<h1>jdbhjitgggjop</h1>
+		<!--
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
@@ -66,7 +79,6 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php
 			endif;
-
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>

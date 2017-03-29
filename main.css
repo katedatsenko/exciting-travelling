@@ -12,6 +12,14 @@ header {
 .menu .container {
 	position: relative;
 }
+.collapse #main-menu {
+	float: left;
+	display: block;
+}
+#main-menu {
+	padding:0;
+}
+
 .globe {
 	font-size: 25px;
 	line-height: 50px;
@@ -40,7 +48,7 @@ header {
 	font-size: 18px;
 	text-transform: uppercase;
 }
-.navbar-default .navbar-nav > li.active-link > a {
+.navbar-default .navbar-nav > li.current-menu-item > a {
 	border-bottom: 1px solid #6b1f5e;
 	color: #8d8c8c;
 }
@@ -51,6 +59,7 @@ header {
 .social li a {
 	padding: 15px;
 }
+
 @media only screen and (max-width: 1090px) {
 	.navbar-brand {
 		padding-right: 30px;
@@ -85,6 +94,10 @@ header {
 		max-height: 50px;
 		top: -15px; 
 	}
+	.collapse #main-menu {
+		width: 100%;
+    	display: block;
+}
 	.social {
 		display: block !important;
 		position: relative;
@@ -97,7 +110,7 @@ header {
 	.globe {
 		display: none;
 	}
-	.navbar-default .navbar-nav > li.active-link > a {
+	.navbar-default .navbar-nav > li.current-menu-item > a {
 		border-bottom: 0;
 		background: #6b1f5e;
 		color: #fefefe;
