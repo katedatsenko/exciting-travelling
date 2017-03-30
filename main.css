@@ -125,7 +125,7 @@ header {
 
 /*POSTS*/
 
-article  {
+article, div.comments-area  {
 	background: #fefefe;
 	border: 0;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .19);
@@ -145,24 +145,29 @@ aside > section {
 article > header {
 	margin: 0; 
 } 
-article > header > a > img {
+article > header > a > img,
+div.entry-content > p > img {
 	padding: 15px;
 	height: auto;
 } 
 article > header > h2,
-aside > section > h2 {
+aside > section > h2,
+article > header > h1  {
 	padding: 0 15px;
 }
 aside > section > h2 {
 	line-height: 40px;
 }
 article > header > h2 > a,
-aside > section > h2 {
+aside > section > h2,
+article > header > h1 {
 	color: #A33A92;
 }
-aside > section > h2 {
+div.col-md-8 > main > article > header > h1,
+div.col-md-4 > aside > section > h2   {
 	border-bottom: 1px #A33A92 solid;
 }
+
 aside > section > ul {
 	list-style-type: none;
 	padding: 0 15px;
@@ -232,7 +237,36 @@ a.more-link:hover {
 	text-decoration: none;
 	opacity: 1;
 }
-
+div.comments-area > div.comment-respond > h3 {
+	padding: 0 15px;
+    color: #A33A92;
+}
+div.comments-area > div.comment-respond > form {
+	padding: 0 15px 15px;
+}
+div.comments-area > div.comment-respond > form > p > a {
+	color: #35132F;
+}
+div.comments-area > div.comment-respond > form > p > label {
+    display: none;
+}
+input.submit {
+	background: none repeat scroll 0 0 #A33A92;
+	opacity: 0.5;
+	color: #FFFFFF;
+	display: block;
+	font-size: 12px;
+	line-height: 12px;
+	padding: 8px 14px;
+	text-decoration: none;
+	margin-top: 15px;
+	border: none;
+}
+input.submit:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	opacity: 1;
+}
 /*PAGINATION*/
 
 nav.nav-pagination {
