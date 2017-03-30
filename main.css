@@ -122,3 +122,140 @@ header {
 	}
 
 }
+
+/*POSTS*/
+
+article  {
+	background: #fefefe;
+	border: 0;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .19);
+	padding: 15px;
+	margin: 0 30px 40px 30px;
+}
+.updated {
+	display: none;
+}
+aside > section {
+	background: #fefefe;
+	border: 0;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .19);
+	padding: 15px;
+	margin: 0 30px 15px 10px;
+}
+article > header {
+	margin: 0; 
+} 
+article > header > a > img {
+	padding: 15px;
+	height: auto;
+} 
+article > header > h2,
+aside > section > h2 {
+	padding: 0 15px;
+}
+aside > section > h2 {
+	line-height: 40px;
+}
+article > header > h2 > a,
+aside > section > h2 {
+	color: #A33A92;
+}
+aside > section > h2 {
+	border-bottom: 1px #A33A92 solid;
+}
+aside > section > ul {
+	list-style-type: none;
+	padding: 0 15px;
+}
+aside > section > ul > li > a,
+aside > section > ul > li > a:hover {
+	color: #464646;
+}
+.cat-item {
+	list-style-position:inside;
+    border: 1px solid #A33A92;
+    display: inline-block;
+    text-transform: lowercase;
+    background: none repeat scroll 0 0 #A33A92;
+	opacity: 0.5;
+	font-size: 12px; /*размер шрифта */
+	line-height: 12px;
+	padding: 8px 14px; /*внутренние отступы */
+	text-decoration: none;
+}
+.cat-item > a {
+	color: #FFFFFF;
+}
+.cat-item:hover {
+	opacity: 1;
+}
+.cat-item a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+article > header > h2 > a:hover {
+	text-decoration: none;
+	color: #464646;
+}
+article > footer {
+	display: none;
+}
+.entry-meta {
+	padding: 0 15px 10px;
+}
+.entry-meta > .posted-on > a ,
+.entry-meta > .byline > .author > a ,
+.entry-meta > a:hover{
+	color: #35132F;
+}
+.entry-content {
+	padding: 0 15px;
+}
+.entry-content > p {
+	font-size: 14px;
+	color: #464646;
+}
+.more-link {
+	background: none repeat scroll 0 0 #A33A92;
+	opacity: 0.5;
+	color: #FFFFFF;
+	display: block;
+	font-size: 12px;
+	line-height: 12px;
+	padding: 8px 14px;
+	text-decoration: none;
+	margin-top: 15px;
+}
+a.more-link:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	opacity: 1;
+}
+
+/*PAGINATION*/
+
+nav.nav-pagination {
+	width: 100%;
+	text-align: center;
+}
+.pagination > li > a, 
+.pagination > li > span {
+	color: #A33A92;
+}
+.pagination > li > a:hover, 
+.pagination > li > span {
+	color: #A33A92;
+	background: none repeat scroll 0 0 #A33A92;
+	color: #FFFFFF;
+}
+
+
+/*FOOTER*/
+
+footer {
+	margin-bottom: 10px;
+}
+footer hr {
+	border-color: #A33A92;
+}

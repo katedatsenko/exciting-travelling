@@ -191,3 +191,5 @@ function registerNavMenu() {
       register_nav_menu( 'menu', 'Primary Menu' );
 }
 add_action( 'after_setup_theme', 'registerNavMenu' ); 
+
+add_theme_support( 'post-thumbnails' );
