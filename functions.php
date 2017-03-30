@@ -193,3 +193,8 @@ function registerNavMenu() {
 add_action( 'after_setup_theme', 'registerNavMenu' ); 
 
 add_theme_support( 'post-thumbnails' );
+
+/**
+ * Load TGM Plugin Activation.
+ */
+require get_template_directory() . '/tgm-plugin-activation/exciting-travelling-tgm-plugin-activation.php';
