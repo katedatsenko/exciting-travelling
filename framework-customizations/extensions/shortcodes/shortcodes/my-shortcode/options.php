@@ -1,4 +1,7 @@
 <?php
+if (!defined('FW')) {
+    die('Forbidden');
+}
 
 $options = array(
     'demo_text'   => array(
