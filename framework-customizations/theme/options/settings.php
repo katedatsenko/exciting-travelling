@@ -571,4 +571,67 @@ $options = array(
             ),
         ),
     ),
+    'option_addable_option' => array(
+        'type'  => 'addable-option',
+        'value' => array('Value 1', 'Value 2', 'Value 3'),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'option' => array( 'type' => 'text' ),
+        'add-button-text' => __('Add', '{domain}'),
+        'sortable' => true,
+    ),
+    'option_addable_box' => array(
+        'type'  => 'addable-box',
+        'value' => array(
+            array(
+                'option_box_1' => 'value 1',
+                'option_box_2' => 'value 2',
+            ),
+            // ...
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'box-options' => array(
+            'option_box_1' => array( 'type' => 'text' ),
+            'option_box_2' => array( 'type' => 'textarea' ),
+        ),
+        'template' => 'Hello {{- option_box_1 }}', // box title
+        'box-controls' => array( // buttons next to (x) remove box button
+            'control-id' => '<small class="dashicons dashicons-smiley"></small>',
+        ),
+        'limit' => 0, // limit the number of boxes that can be added
+        'add-button-text' => __('Add', '{domain}'),
+        'sortable' => true,
+    ),
+    'option_addable_typography-v2' => array(
+        'type' => 'typography-v2',
+        'value' => array(
+            'family' => 'Amarante',
+            // For standard fonts, instead of subset and variation you should set 'style' and 'weight'.
+            // 'style' => 'italic',
+            // 'weight' => 700,
+            'subset' => 'latin-ext',
+            'variation' => 'regular',
+            'size' => 14,
+            'line-height' => 13,
+            'letter-spacing' => -2,
+            'color' => '#0000ff'
+        ),
+        'components' => array(
+            'family'         => true,
+            // 'style', 'weight', 'subset', 'variation' will appear and disappear along with 'family'
+            'size'           => true,
+            'line-height'    => true,
+            'letter-spacing' => true,
+            'color'          => true
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+    )
 );
