@@ -1,20 +1,20 @@
 <?php
-if ( ! defined('FW') ){
+
+if (!defined('FW')) {
     die('Forbidden');
 }
-
-class FW_Option_Type_New extends FW_Option_Type
+class FW_Option_Type_My_Table_Builder extends FW_Option_Type
 {
     public function get_type()
     {
-        return 'new';
+        return 'my-table-builder';
     }
     /**
      * @internal
      */
     protected function _enqueue_static($id, $option, $data)
     {
-        $uri = get_template_directory_uri() .'/inc/includes/option-types/'. $this->get_type() .'/static';
+       /* $uri = get_template_directory_uri() .'/inc/includes/option-types/'. $this->get_type() .'/static';
         wp_enqueue_style(
             'fw-option-'. $this->get_type(),
             $uri .'/css/styles.css'
@@ -23,7 +23,7 @@ class FW_Option_Type_New extends FW_Option_Type
             'fw-option-'. $this->get_type(),
             $uri .'/js/scripts.js',
             array('fw-events', 'jquery')
-        );
+        );*/
     }
     /**
      * @internal
@@ -59,7 +59,7 @@ class FW_Option_Type_New extends FW_Option_Type
         );
         $html  = '<div '. fw_attr_to_html($wrapper_attr) .'>';
         $html .= '<input '. fw_attr_to_html($option['attr']) .' type="text" />';
-        $html .= '<my-button type="button" class="button">'. __('Clear text', '{domain}') .'</my-button>';
+        $html .= '<my-button type="my-button" class="my-button">'. __('Clear text', '{domain}') .'</my-button>';
         $html .= '</div>';
         return $html;
     }
@@ -95,4 +95,4 @@ class FW_Option_Type_New extends FW_Option_Type
         );
     }
 }
-FW_Option_Type::register('FW_Option_Type_New');
+FW_Option_Type::register('FW_Option_Type_My_Table_Builder');
