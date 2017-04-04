@@ -633,5 +633,177 @@ $options = array(
         'label' => __('Label', '{domain}'),
         'desc'  => __('Description', '{domain}'),
         'help'  => __('Help tip', '{domain}'),
-    )
+    ),
+     'option_wp_editor' => array(
+        'type'  => 'wp-editor',
+        'value' => 'default value',
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'size' => 'small', // small, large
+        'editor_height' => 400,
+        'wpautop' => true,
+        'editor_type' => false, // tinymce, html
+        /**
+         * Also available
+         * https://github.com/WordPress/WordPress/blob/4.4.2/wp-includes/class-wp-editor.php#L80-L94
+         */
+    ),
+    'option_multi-picker' => array(
+        'type'  => 'multi-picker',
+        'label' => false,
+        'desc'  => false,
+        'value' => array(
+            /**
+             * '<custom-key>' => 'default-choice'
+             */
+            'gadget' => 'phone',
+            /**
+             * These are the choices and their values,
+             * they are available after option was saved to database
+             */
+            'laptop' => array(
+                'price' => '123',
+                'webcam' => false
+            ),
+            'phone' => array(
+                'price' => '456',
+                'memory' => '32'
+            )
+        ),
+        'picker' => array(
+            // '<custom-key>' => option
+            'gadget' => array(
+                'label'   => __('Choose device', '{domain}'),
+                'type'    => 'select', // or 'short-select'
+                'choices' => array(
+                    'phone'  => __('Phone', '{domain}'),
+                    'laptop' => __('Laptop', '{domain}')
+                ),
+                'desc'    => __('Description', '{domain}'),
+                'help'    => __('Help tip', '{domain}'),
+            )
+        ),
+        /*
+        'picker' => array(
+            // '<custom-key>' => option
+            'gadget' => array(
+                'label'   => __('Choose device', '{domain}'),
+                'type'    => 'radio',
+                'choices' => array(
+                    'phone'  => __('Phone', '{domain}'),
+                    'laptop' => __('Laptop', '{domain}')
+                ),
+                'desc'    => __('Description', '{domain}'),
+                'help'    => __('Help tip', '{domain}'),
+            )
+        ),
+        */
+        /*
+        'picker' => array(
+            // '<custom-key>' => option
+            'gadget' => array(
+                'label'   => __('Choose device', '{domain}'),
+                'type'    => 'image-picker',
+                'choices' => array(
+                    'phone'  => 'http://placekitten.com/70/70',
+                    'laptop' => 'http://placekitten.com/71/70'
+                ),
+                'desc'    => __('Description', '{domain}'),
+                'help'    => __('Help tip', '{domain}'),
+            )
+        ),
+        */
+        /*
+        picker => array(
+            // '<custom-key>' => option
+            'gadget' => array(
+                'label' => __('Choose device', '{domain}'),
+                'type'  => 'switch',
+                'right-choice' => array(
+                    'value' => 'laptop',
+                    'label' => __('Laptop', '{domain}')
+                ),
+                'left-choice' => array(
+                    'value' => 'phone',
+                    'label' => __('Phone', '{domain}')
+                ),
+                'desc' => __('Description', '{domain}'),
+                'help' => __('Help tip', '{domain}'),
+            )
+        ),
+        */
+        'choices' => array(
+            'phone' => array(
+                'price' => array(
+                    'type'  => 'text',
+                    'label' => __('Price', '{domain}'),
+                ),
+                'memory' => array(
+                    'type'  => 'select',
+                    'label' => __('Memory', '{domain}'),
+                    'choices' => array(
+                        '16' => __('16Gb', '{domain}'),
+                        '32' => __('32Gb', '{domain}'),
+                        '64' => __('64Gb', '{domain}'),
+                    )
+                )
+            ),
+            'laptop' => array(
+                'price' => array(
+                    'type'  => 'text',
+                    'label' => __('Price', '{domain}'),
+                ),
+                'webcam' => array(
+                    'type'  => 'switch',
+                    'label' => __('Webcam', '{domain}'),
+                )
+            ),
+        ),
+        /**
+         * (optional) if is true, the borders between choice options will be shown
+         */
+        'show_borders' => false,
+    ),
+    'option_map' => array(
+        'type'  => 'map',
+        'value' => array(
+            'coordinates' => array(
+                'lat'   => -34,
+                'lng'   => 150,
+            )
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+    ),
+    'option_multi' => array(
+        'type'  => 'multi',
+        'value' => array(
+            'option-1' => 'value 1',
+            'option-2' => 'value 2',
+        ),
+        'attr'  => array(
+            'class' => 'custom-class',
+            'data-foo' => 'bar',
+            /*
+            // Add this class to display inner options separators
+            'class' => 'fw-option-type-multi-show-borders',
+            */
+        ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'inner-options' => array(
+            'option_1' => array( 'type' => 'text' ),
+            'option_2' => array( 'type' => 'textarea' ),
+        )
+    ),
+    'option_hidden' => array(
+        'type'  => 'hidden',
+        'value' => 'default value',
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+    ),
 );
