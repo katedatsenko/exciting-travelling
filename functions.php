@@ -212,3 +212,8 @@ add_theme_support( 'post-thumbnails' );
  * Load TGM Plugin Activation.
  */
 require get_template_directory() . '/tgm-plugin-activation/exciting-travelling-tgm-plugin-activation.php';
+
+/**
+ * Load hooks.
+ */
+require get_template_directory() . '/inc/hooks.php'; 
