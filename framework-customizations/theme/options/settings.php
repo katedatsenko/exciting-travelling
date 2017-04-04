@@ -364,4 +364,211 @@ $options = array(
             'to' => ''
         )
     ),
+    'option_icon-v2' => array(
+        'type'  => 'icon-v2',
+        /**
+         * small | medium | large | sauron
+         * Yes, sauron. Definitely try it. Great one.
+         */
+        'preview_size' => 'medium',
+        /**
+         * small | medium | large
+         */
+        'modal_size' => 'medium',
+        /**
+         * Здесь нет смысла настраивать значение из кода.
+         *
+         * Я задокументирую результат, который вы получите в интерфейсе здесь::
+         * 'value' => array(
+         *   'type' => 'icon-font', // icon-font | custom-upload
+         *
+         *   // ONLY IF icon-font
+         *   'icon-class' => '',
+         *   'icon-class-without-root' => false,
+         *   'pack-name' => false,
+         *   'pack-css-uri' => false
+         *
+         *   // ONLY IF custom-upload
+         *   // 'attachment-id' => false,
+         *   // 'url' => false
+         * ),
+         */
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+    ),
+    'option_upload' => array(
+        'type'  => 'upload',
+        'value' => array(
+            /*
+            'attachment_id' => '9',
+            'url' => '//site.com/wp-content/uploads/2014/02/whatever.jpg'
+            */
+            // Если значение установлено в коде, оно не рассматривается и не используется,
+            // поскольку нет смысла устанавливать hardcode attachment_id
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        /**
+         * Если установлено `true`, опция позволит загружать только изображения и отображать thumb выбранного.
+         * Если установлено значение `false`, опция позволит загрузить любой файл из медиа-библиотеки.
+         */
+        'images_only' => true,
+        /**
+         * Массив с разрешенными расширениями файлов, который будет фильтровать медиа-библиотеку и файлы для загрузки
+         */
+        'files_ext' => array( 'doc', 'pdf', 'zip' ),
+        /**
+         * Массив с дополнительными типами mime, который не находится в массиве по умолчанию с mime-типами
+         * из библиотеки Plustload javascript.Формат: массив ('<mime-type>, <ext1> <ext2> <ext2>').
+         * Например: вы устанавливаете фильтр rar для фильтра, но фильтр игнорирует его, чем вы должны установить
+         * Массив со следующим структурным массивом ('.rar, rar'), и это решит проблему.
+         */
+        'extra_mime_types' => array( 'audio/x-aiff, aif aiff' )
+    ),
+    'option_multi_upload' => array(
+        'type'  => 'multi-upload',
+        'value' => array(
+            /*
+            array(
+                'attachment_id' => '9',
+                'url' => '//site.com/wp-content/uploads/2014/02/whatever.jpg'
+            ),
+            ...
+            */
+            // if value is set in code, it is not considered and not used
+            // because there is no sense to set hardcode attachment_id
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        /**
+         * Если установлено `true`, опция позволит загружать только изображения и отображать thumb выбранного.
+         * Если установлено значение `false`, опция позволит загрузить любой файл из медиа-библиотеки.
+         */
+        'images_only' => true,
+        /**
+         * Массив с разрешенными расширениями файлов, который будет фильтровать медиа-библиотеку и файлы для загрузки
+         */
+        'files_ext' => array( 'doc', 'pdf', 'zip' ),
+        /**
+         * Массив с дополнительными типами mime, который не находится в массиве по умолчанию с mime-типами
+         * из библиотеки Plustload javascript.Формат: массив ('<mime-type>, <ext1> <ext2> <ext2>').
+         * Например: вы устанавливаете фильтр rar для фильтра, но фильтр игнорирует его, чем вы должны установить
+         * Массив со следующим структурным массивом ('.rar, rar'), и это решит проблему.
+         */
+        'extra_mime_types' => array( 'audio/x-aiff, aif aiff' )
+    ),
+    'option_slider' => array(
+        'type'  => 'slider',
+        'value' => 33,
+        'properties' => array(
+            /*
+            'min' => 0,
+            'max' => 100,
+            'step' => 1, // Set slider step. Always > 0. Could be fractional.
+            */
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+    ),
+    'option_range_slider' => array(
+        'type'  => 'range-slider',
+        'value' => array(
+            'from' => 10,
+            'to'   => 33,
+        ),
+        'properties' => array(
+            /*
+            'min' => 0,
+            'max' => 100,
+            'step' => 1, // Set slider step. Always > 0. Could be fractional.
+            */
+        ),
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+    ),
+    'option_popup' => array(
+        'type' => 'popup',
+        'value' => array(
+            'option_1' => 'value 1',
+            'option_2' => 'value 2',
+        ),
+        'label' => __('Popup', '{domain}'),
+        'desc'  => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+        'popup-title' => __('Popup Title', '{domain}'),
+        'button' => __('Edit', '{domain}'),
+        'popup-title' => null,
+        'size' => 'small', // small, medium, large
+        'popup-options' => array(
+            'option_popup_1' => array(
+                'label' => __('Text', '{domain}'),
+                'type' => 'text',
+                'value' => 'Demo text value',
+                'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                'help' => sprintf("%s \n\n'\"<br/><br/>\n\n <b>%s</b>",
+                    __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                    __('Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', '{domain}')
+                ),
+            ),
+            'option_popup_2' => array(
+                'label' => __('Textarea', '{domain}'),
+                'type' => 'textarea',
+                'value' => 'Demo textarea value',
+                'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                'help' => sprintf("%s \n\n'\"<br/><br/>\n\n <b>%s</b>",
+                    __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                    __('Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', '{domain}')
+                ),
+            ),
+        ),
+    ),
+    'option_addable_popup' => array(
+        'type' => 'addable-popup',
+        'value' => array(
+            array(
+                'addable_popup_option_1' => 'value 1',
+                'addable_popup_option_2' => 'value 2',
+            ),
+            // ...
+        ),
+        'label' => __('Addable Popup', '{domain}'),
+        'desc'  => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+        'template' => '{{- addable_popup_option_1 }}',
+        'popup-title' => null,
+        'size' => 'small', // small, medium, large
+        'limit' => 0, // limit the number of popup`s that can be added
+        'add-button-text' => __('Add', '{domain}'),
+        'sortable' => true,
+        'popup-options' => array(
+            'addable_popup_option_1' => array(
+                'label' => __('Text', '{domain}'),
+                'type' => 'text',
+                'value' => 'Demo text value',
+                'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                'help' => sprintf("%s \n\n'\"<br/><br/>\n\n <b>%s</b>",
+                    __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                    __('Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', '{domain}')
+                ),
+            ),
+            'addable_popup_option_2' => array(
+                'label' => __('Textarea', '{domain}'),
+                'type' => 'textarea',
+                'value' => 'Demo textarea value',
+                'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                'help' => sprintf("%s \n\n'\"<br/><br/>\n\n <b>%s</b>",
+                    __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '{domain}'),
+                    __('Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', '{domain}')
+                ),
+            ),
+        ),
+    ),
 );
