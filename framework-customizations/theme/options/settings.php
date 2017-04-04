@@ -310,4 +310,58 @@ $options = array(
             )
         )
     ),
+    'option_date_picker' => array(
+        'type'  => 'date-picker',
+        'value' => '',
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'monday-first' => true, // Неделя начнется с понедельника; Для воскресенья установлено значение false
+        'min-date' => date('d-m-Y'), // По умолчанию минимальной датой будет текущий день. Установите дату в формате d-m-Y в качестве даты начала
+        'max-date' => null, // По умолчанию максимальная дата не указана. Установите дату в формате d-m-Y в качестве даты начала
+    ),
+    'option_datetime_picker' => array(
+        'type'  => 'datetime-picker',
+        'value' => '',
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'datetime-picker' => array(
+            'format'        => 'Y/m/d H:i', // Формат даты и времени
+            'maxDate'       => false,  // По умолчанию defautFormat datetimelt нет максимальной даты, установите дату в формате даты и времени..
+            'minDate'       => false,  // По умолчанию минимальная дата будет текущим днем, установите дату в формате даты и времени.
+            'timepicker'    => true,   // Show timepicker.
+            'datepicker'    => true,   // Show datepicker.
+            'defaultTime'   => '12:00' // Если входное значение пустое, timepicker установит время использования defaultTime.
+        ),
+    ),
+    'option_datetime_range' => array(
+        'type'  => 'datetime-range',
+        'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+        'label' => __('Label', '{domain}'),
+        'desc'  => __('Description', '{domain}'),
+        'help'  => __('Help tip', '{domain}'),
+        'datetime-pickers' => array(
+            'from' => array(
+                'minDate' => '1970/01/01', // By default minimum date will be current day, set a date in the datetime format.
+                'maxDate' => '2038/01/19', // By default there is not maximum date , set a date in the datetime format.
+                'format'  => 'Y/m/d H:i',  // Format datetime.
+                'timepicker'  => true,     // Show timepicker.
+                'datepicker'  => true,     // Show datepicker.
+            ),
+            'to' => array(
+                'minDate' => '1970/01/01', // By default minimum date will be current day, set a date in the datetime format.
+                'maxDate' => '2038/01/19', // By default there is not maximum date , set a date in the datetime format.
+                'format'  => 'Y/m/d H:i',  // Format datetime.
+                'timepicker'  => true,     // Show timepicker.
+                'datepicker'  => true,     // Show datepicker.
+            )
+        ),
+        'value' => array(
+            'from' => '',
+            'to' => ''
+        )
+    ),
 );
