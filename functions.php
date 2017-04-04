@@ -15,6 +15,7 @@ if ( ! function_exists( 'exciting_travelling_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+define("MY_THEME_TEXTDOMAIN", 'exciting-travelling');
 function exciting_travelling_setup() {
 	/*
 	 * Make theme available for translation.
@@ -23,6 +24,7 @@ function exciting_travelling_setup() {
 	 * to change 'exciting-travelling' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'exciting-travelling', get_template_directory() . '/languages' );
+	load_theme_textdomain( MY_THEME_TEXTDOMAIN, get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -116,6 +118,18 @@ function exciting_travelling_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'exciting_travelling_scripts' );
+
+function _action_theme_wp_print_styles() {
+    if (!defined('FW')) return; // prevent fatal error when the framework is not active
+    $option_value = fw_get_db_customizer_option('body-color');
+    echo '<style type="text/css">'
+        . 'body { '
+        . 'border: 30px solid '. esc_html($option_value) .'; '
+        . '}'
+        . '</style>';
+}
+add_action('wp_print_styles', '_action_theme_wp_print_styles');
+
 
 /**
  * Implement the Custom Header feature.
